@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && mkdir .well-known && cp assetlinks.json .well-known/assetlinks.json",
+    "build": "react-scripts build && mkdir ./build/.well-known && cp assetlinks.json ./build/.well-known/assetlinks.json",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
