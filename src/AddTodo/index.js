@@ -9,7 +9,10 @@ function AddTodo({ saveTodo }) {
   return (
     <div className="AddTodo">
       <h2>Add todo: </h2>
-      <input type="text" onChange={(e) => setTodo(e.target.value)}></input>
+      <label>
+        Thing todo:{" "}
+        <input type="text" onChange={(e) => setTodo(e.target.value)}></input>
+      </label>
       <button onClick={() => todoSaved()}>Add</button>
     </div>
   );

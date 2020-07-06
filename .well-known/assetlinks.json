@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.netlify.todostuffnow.twa",
+      "sha256_cert_fingerprints": [
+        "4F:A9:0A:6F:09:A3:FE:93:41:8C:FB:30:AD:E1:8A:F3:FF:6C:6F:CE:74:CE:58:0A:5B:64:BB:2A:50:EA:DB:CC"
+      ]
+    }
+  }
+]
