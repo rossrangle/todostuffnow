@@ -1,0 +1,14 @@
+.todo--done p {
+  text-decoration: line-through;
+}
+
+.TodoList ul {
+  padding: 0;
+}
+
+.TodoList li {
+  list-style-type: none;
+}
+
+.todo {
+}

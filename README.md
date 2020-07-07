@@ -1,68 +1,57 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c05b0d40-0360-436e-9985-7d1ba3f9332c/deploy-status)](https://app.netlify.com/sites/radius-ds/deploys) [![rangle](https://circleci.com/gh/rangle/radius.svg?style=svg)](https://app.circleci.com/pipelines/github/rangle/radius)
 
-## Available Scripts
+# Radius Design System Kit
 
-In the project directory, you can run:
+The Radius is an opinionated assemblage of open-source tools and libraries that allow you to accelerate your design system. The choice of tools, their composition, and a set of foundational components guides you on how to build a constraint-based system.
 
-### `yarn start`
+[rangle.io/radius](https://rangle.io/radius)<br/>
+[Figma File](https://www.figma.com/file/RqENxZWAzGiEWM7COch1Sc/Radius-Design-Kit)<br/>
+[Storybook Docs](https://radius-ds.netlify.com)<br/>
+[Chromatic](https://www.chromaticqa.com/library?appId=5e44874935df3b0022b9d890)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+#### Are you using Radius? 
+We would love to hear about how you are using Radius or any feedback or feature requests. Open an [issue](https://github.com/rangle/radius/issues/new).
 
-### `yarn test`
+### 🚀 Quick start
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Above the file list, click **Use this template** button. For more info see [Getting Started — Develop
+](https://radius-ds.netlify.com/?path=/docs/foundations-get-started-develop--page)
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Building This Repo
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+1.  **Install Yarn**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    for more options see https://legacy.yarnpkg.com/en/docs/install#mac-stable
 
-### `yarn eject`
+    ```sh
+    curl -o- -L https://yarnpkg.com/install.sh | bash
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1.  **Install Dependencies**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    This project is using [Workspaces](https://legacy.yarnpkg.com/en/docs/workspaces). Yarn will install dependencies for all the packages.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    ```sh
+    yarn
+    ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1.  **Build & Run Storybook**
 
-## Learn More
+    ```sh
+    yarn workspace ds build
+    yarn workspace ds storybook
+    ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    Your site is now running at `http://localhost:6006/`!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    Make sure your node version is >=13.2.0
 
-### Code Splitting
+1. **Run Sample App (Created using CRA)**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+    ```sh
+    yarn workspace app start
+    ```
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+    Your site is now running at `http://localhost:3000/`!
