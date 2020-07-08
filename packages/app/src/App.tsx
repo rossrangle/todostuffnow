@@ -3,6 +3,7 @@ import { Box, Text, Heading, theme, Flex, Image } from "ds";
 import { ThemeProvider } from "styled-components";
 import AddTodo from "./AddTodo";
 import TodoList from "./TodoList";
+import Timer from "./Timer";
 import logo from "./imgs/logo.png";
 
 export interface Todo {
@@ -40,6 +41,8 @@ const App: React.FC = () => {
               cracking!
             </Text>
           </Box>
+
+          <Timer></Timer>
 
           <AddTodo
             saveTodo={(todoText: string) =>

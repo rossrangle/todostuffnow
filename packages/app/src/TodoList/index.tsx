@@ -2,7 +2,7 @@ import React from "react";
 
 import "./TodoList.css";
 import { Box, Heading, Button, Text, Flex, Icons } from "ds";
-import { Todo } from "./App";
+import { Todo } from "../App";
 
 function TodoList({
   todos,
