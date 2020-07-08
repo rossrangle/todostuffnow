@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 
 import "./Timer.css";
-import { Box, Text, FormControl, Label, Input, Heading } from "ds";
+import { Box, Text, FormControl, Label, Input, Heading, Button } from "ds";
+
+function requestPermission() {
+  Notification.requestPermission(function(status) {
+    console.log("Notification permission status:", status);
+  });
+}
 
 function Timer() {
   const [touched, setTouched] = useState<boolean>(false);
@@ -10,17 +16,32 @@ function Timer() {
 
   useEffect(() => {
     function decreaseTime() {
-      if (secondsRemaining === 0 && minutesRemaining === 0) {
+      const hasEnded = secondsRemaining <= 0 && minutesRemaining <= 0;
+      if (hasEnded) {
+        if (Notification.permission === "granted") {
+          navigator.serviceWorker.getRegistration().then(function(reg) {
+            console.log({ reg });
+            reg &&
+              reg.showNotification("Hello world!", {
+                body: "This is the body of the notification",
+                tag: "This is a tag",
+              });
+          });
+        } else {
+          console.log(" No notification ");
+        }
       } else if (secondsRemaining === 0) {
         setMinutesRemaining(minutesRemaining - 1);
-        setSecondsRemaining(59);
+        setSecondsRemaining(10);
       } else {
         setSecondsRemaining(secondsRemaining - 1);
       }
     }
-    const timeout = setTimeout(decreaseTime, 1000);
-    return () => clearTimeout(timeout);
-  }, [secondsRemaining, minutesRemaining]);
+    if (touched) {
+      const timeout = setTimeout(decreaseTime, 1000);
+      return () => clearTimeout(timeout);
+    }
+  }, [touched, secondsRemaining, minutesRemaining]);
 
   return (
     <Box mb={3} p={3} className="Timer">
@@ -31,6 +52,7 @@ function Timer() {
         <Input
           value={minutesRemaining}
           id="time-remaining"
+          min={0}
           type="number"
           onChange={(e: any) => {
             setMinutesRemaining(e.target.value);
@@ -40,6 +62,13 @@ function Timer() {
           style={{ flexGrow: 1 }}
         />
       </FormControl.Field>
+      <Button
+        onClick={requestPermission}
+        hidden={!touched || Notification.permission === "granted"}
+        width="100%"
+      >
+        Get notified when time is up!
+      </Button>
       <Text variant="body" hidden={!touched}>
         Time remaining
       </Text>
