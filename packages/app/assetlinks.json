@@ -18,5 +18,15 @@
         "EB:A8:1B:AB:D9:00:7F:5B:6B:3C:04:E8:A0:A1:6D:2E:F0:B5:5E:B4:71:88:BF:88:A2:3E:CC:BD:9C:AF:A0:7B"
       ]
     }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.netlify.todostuffnowstaging.twa",
+      "sha256_cert_fingerprints": [
+        "1E:85:CF:66:2F:BF:FA:22:45:62:44:CE:9A:73:CC:21:BB:44:91:CA:D0:19:44:6F:C1:E7:68:A6:E1:17:AB:A8"
+      ]
+    }
   }
 ]
